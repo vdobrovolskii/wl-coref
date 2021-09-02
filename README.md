@@ -1,6 +1,6 @@
 ## Word-Level Coreference Resolution
 
-This is a repository with the code to reproduce the experiments described in the paper of the same name, which was accepted to EMNLP 2021.
+This is a repository with the code to reproduce the experiments described in the paper of the same name, which was accepted to EMNLP 2021. The anonymous preprint is available [here](https://www.dropbox.com/s/ge4mtuekjimrp01/Word-Level%20Coreference%20Resolution.pdf?dl=0). The final version will be made available by 10.09.2021.
 
 ### Table of contents
 1. [Preparation](#preparation)
