@@ -1,6 +1,6 @@
 ## Word-Level Coreference Resolution
 
-This is a repository with the code to reproduce the experiments described in the paper of the same name, which was accepted to EMNLP 2021. The paper is available [here](https://arxiv.org/abs/2109.04127).
+This is a repository with the code to reproduce the experiments described in the paper of the same name, which was accepted to EMNLP 2021. The paper is available [here](https://aclanthology.org/2021.emnlp-main.605/).
 
 ### Table of contents
 1. [Preparation](#preparation)
@@ -66,3 +66,15 @@ Make sure that you have successfully completed all steps of the [Preparation](#p
 3. Run the conll-2012 scripts to obtain the metrics:
 
         python calculate_conll.py roberta test 20
+
+### Citation
+    @inproceedings{dobrovolskii-2021-word,
+    title = "Word-Level Coreference Resolution",
+    author = "Dobrovolskii, Vladimir",
+    booktitle = "Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2021",
+    address = "Online and Punta Cana, Dominican Republic",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.emnlp-main.605",
+    pages = "7670--7675"}
