@@ -3,9 +3,13 @@
 This is a repository with the code to reproduce the experiments described in the paper of the same name, which was accepted to EMNLP 2021. The paper is available [here](https://aclanthology.org/2021.emnlp-main.605/).
 
 ### Table of contents
-1. [Preparation](#preparation)
-2. [Training](#training)
-3. [Evaluation](#evaluation)
+- [Word-Level Coreference Resolution](#word-level-coreference-resolution)
+  - [Table of contents](#table-of-contents)
+  - [Preparation](#preparation)
+  - [Training](#training)
+  - [Evaluation](#evaluation)
+  - [Prediction](#prediction)
+  - [Citation](#citation)
 
 ### Preparation
 
@@ -66,6 +70,38 @@ Make sure that you have successfully completed all steps of the [Preparation](#p
 3. Run the conll-2012 scripts to obtain the metrics:
 
         python calculate_conll.py roberta test 20
+
+### Prediction
+
+To predict coreference relations on an arbitrary text, you will need to prepare the data in the jsonlines format (one json-formatted document per line).
+The following fields are requred:
+
+        {
+                "document_id": "tc_mydoc_001",
+                "cased_words": ["Hi", "!", "Bye", "."],
+                "sent_id": [0, 0, 1, 1]
+        }
+
+You can optionally provide the speaker data:
+
+        {
+                "speaker": ["Tom", "Tom", "#2", "#2"]
+        }
+
+`document_id` can be any string that starts with a two-letter genre identifier. The genres recognized are the following:
+* bc: broadcast conversation
+* bn: broadcast news
+* mz: magazine genre (Sinorama magazine)
+* nw: newswire genre
+* pt: pivot text (The Bible)
+* tc: telephone conversation (CallHome corpus)
+* wb: web data
+
+Then run:
+
+        python predict.py roberta input.jsonlines output.jsonlines
+
+This will utilize the latest weights available in the data directory for the chosen configuration. To load other weights, use the `--weights` argument.
 
 ### Citation
     @inproceedings{dobrovolskii-2021-word,
