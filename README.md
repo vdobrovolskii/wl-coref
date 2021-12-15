@@ -3,13 +3,11 @@
 This is a repository with the code to reproduce the experiments described in the paper of the same name, which was accepted to EMNLP 2021. The paper is available [here](https://aclanthology.org/2021.emnlp-main.605/).
 
 ### Table of contents
-- [Word-Level Coreference Resolution](#word-level-coreference-resolution)
-  - [Table of contents](#table-of-contents)
-  - [Preparation](#preparation)
-  - [Training](#training)
-  - [Evaluation](#evaluation)
-  - [Prediction](#prediction)
-  - [Citation](#citation)
+1. [Preparation](#preparation)
+2. [Training](#training)
+3. [Evaluation](#evaluation)
+5. [Prediction](#prediction)
+6. [Citation](#citation)
 
 ### Preparation
 
@@ -96,6 +94,8 @@ You can optionally provide the speaker data:
 * pt: pivot text (The Bible)
 * tc: telephone conversation (CallHome corpus)
 * wb: web data
+
+You can check [a sample input file](sample_input.jsonlines) for reference.
 
 Then run:
 
