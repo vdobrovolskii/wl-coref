@@ -9,7 +9,7 @@ import subprocess
 def extract_f1(proc: subprocess.CompletedProcess) -> float:
     prev_line = ""
     curr_line = ""
-    for line in str(proc.stdout).splitlines():
+    for line in (proc.stdout).decode('utf-8').splitlines():
         prev_line = curr_line
         curr_line = line
     return float(re.search(r"F1:\s*([0-9.]+)%", prev_line).group(1))
