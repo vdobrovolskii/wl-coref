@@ -51,7 +51,8 @@ class CorefModel:  # pylint: disable=too-many-instance-attributes
     def __init__(self,
                  config_path: str,
                  section: str,
-                 epochs_trained: int = 0):
+                 epochs_trained: int = 0,
+                 build_optimizers: bool = True):
         """
         A newly created model is set to evaluation mode.
 
@@ -65,7 +66,8 @@ class CorefModel:  # pylint: disable=too-many-instance-attributes
         self.epochs_trained = epochs_trained
         self._docs: Dict[str, List[Doc]] = {}
         self._build_model()
-        self._build_optimizers()
+        if build_optimizers:
+            self._build_optimizers()
         self._set_training(False)
         self._coref_criterion = CorefLoss(self.config.bce_loss_weight)
         self._span_criterion = torch.nn.CrossEntropyLoss(reduction="sum")
